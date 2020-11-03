@@ -1,0 +1,6 @@
+name: SkinChanger
+author: Teunboeke 
+version: 1.0.0
+main: Teunboeke\SkinChanger\main
+api:
+description:
