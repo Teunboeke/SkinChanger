@@ -59,11 +59,11 @@ class main extends PluginBase implements Listener
  file_put_contents($this->playerDataPath, json_encode($this->playerData));
                                                                                                                         }
                           
-                                                                               }
-                                                                               public function onCommand(CommandSender $sender, Command $command, string $label, array $args): bool
+                                                                       }
+public function onCommand(CommandSender $sender, Command $command, string $label, array $args): bool
                                                                                {
-                                                                                   if ($command->getName() !== "setskin") {
-                                                                                                       return false;
+                   if ($command->getName() !== "setskin") {
+                                                                                     return false;
                                                                                                    }
                                                                                        
                                                                                                if (!$sender instanceof Player) {
