@@ -87,4 +87,17 @@ class main extends PluginBase implements Listener
                                 try {                                       
   $uuid = $this->getUUID($username);                    
                                  if ($uuid) {                
-                                                             $profile = $this->loadJSON(str_replace("<uuid>", $uuid, $this->skinURL));
+                                                     $profile = $this->loadJSON(str_replace("<uuid>", $uuid, $this->skinURL));
+                                                     if ($profile) {
+                                                                          $properties = json_decode(base64_decode($profile->properties[0]->value));
+                                                                                     $skinUrl = $properties->textures->SKIN->url;
+                                                                                     $cachedSkin = file_get_contents($skinUrl);
+                                            file_put_contents($this->skinsDir . "/" . $username . ".png", $cachedSkin);      
+                                                                                 }
+                                                         }
+                                                    } catch (ErrorException $ex) {
+                                                        $sender->sendMessage("Failed to load skin for $username");
+                                                    }
+                           }
+
+                                   if (file_exists($this->skinsDir . "/" . $username . ".png")) {                                                          
