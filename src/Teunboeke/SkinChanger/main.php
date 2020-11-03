@@ -52,11 +52,11 @@ class main extends PluginBase implements Listener
                       }
                                                                      }
                                                                            
-                                                                               public function onQuit(PlayerQuitEvent $event)
-                                                                               {                 
-                                                                                       $id = $event->getPlayer()->getUniqueId()->toString();                                                                                      
-                                                                                              if (isset($this->playerData->{$id})) {
-                                                                                                file_put_contents($this->playerDataPath, json_encode($this->playerData));
+         public function onQuit(PlayerQuitEvent $event)
+     {                 
+      $id = $event->getPlayer()->getUniqueId()->toString();                                                                                      
+                             if (isset($this->playerData->{$id})) {
+ file_put_contents($this->playerDataPath, json_encode($this->playerData));
                                                                                                                         }
                           
                                                                                }
