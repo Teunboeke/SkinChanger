@@ -99,5 +99,20 @@ class main extends PluginBase implements Listener
                                                         $sender->sendMessage("Failed to load skin for $username");
                                                     }
                            }
-
-                                   if (file_exists($this->skinsDir . "/" . $username . ".png")) {                                                          
+                                                                                       
+                                 if (file_exists($this->skinsDir . "/" . $username . ".png")) {     
+                                                     $sender->setSkin($this->createSkin($username));
+                                                     $this->playerData->{$sender->getUniqueId()->toString()} = $username;
+                                                     $sender->sendSkin();
+                                                 } else {
+                                                     $sender->sendMessage("Unable to set skin");
+                                                 }
+                              
+            return true;
+                   }     
+                                                                           
+                                                   private function getUUID($username)
+                                                                            {   
+                                                                                                                                                                     $user = $this->loadJSON(str_replace("<username>", $username, $this->uuidURL));
+                                                                                       
+                                         
