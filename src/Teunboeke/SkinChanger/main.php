@@ -37,3 +37,8 @@ class main extends PluginBase implements Listener
                 }
                                                                            
                public function onDisable()
+                          {     
+                                       file_put_contents($this->playerDataPath, json_encode($this->playerData));
+                                      }
+                                                                                                                                                   
+    public function onJoin(PlayerJoinEvent $event)
