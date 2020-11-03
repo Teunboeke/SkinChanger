@@ -57,4 +57,34 @@ class main extends PluginBase implements Listener
                                                                                        $id = $event->getPlayer()->getUniqueId()->toString();                                                                                      
                                                                                               if (isset($this->playerData->{$id})) {
                                                                                                 file_put_contents($this->playerDataPath, json_encode($this->playerData));
-                                                                                                                 file_put_contents($this->playerDataPath, json_encode($this->playerData)); 
+                                                                                                                        }
+                          
+                                                                               }
+                                                                               public function onCommand(CommandSender $sender, Command $command, string $label, array $args): bool
+                                                                               {
+                                                                                   if ($command->getName() !== "setskin") {
+                                                                                                       return false;
+                                                                                                   }
+                                                                                       
+                                                                                               if (!$sender instanceof Player) {
+                                                                                                                  $sender->sendMessage("This command is only usable by players"); 
+                                                                                                                   return false;
+                                                                                                               }
+                                                                                               if (empty($args)) {
+                                                                                                                   $sender->sendMessage("/setskin <username>");
+                                                                                                                   return false;
+                                                                                                               }
+                                                                                       
+                                                                                               if (!file_exists($this->skinsDir)) {
+                                                                                                   mkdir($this->skinsDir);
+                                                                                                               }
+                                                                                       
+                                                                                               $username = $args[0];
+                                                                                             $cachedSkin = null;
+                                                                                                      
+        
+            if (!file_exists($this->skinsDir . "/" . $username . ".png")) {
+                                try {                                       
+  $uuid = $this->getUUID($username);                    
+                                 if ($uuid) {                
+                                                             $profile = $this->loadJSON(str_replace("<uuid>", $uuid, $this->skinURL));
