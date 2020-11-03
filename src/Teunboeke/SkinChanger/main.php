@@ -112,7 +112,19 @@ class main extends PluginBase implements Listener
                    }     
                                                                            
                                                    private function getUUID($username)
-                                                                            {   
-                                                                                                                                                                     $user = $this->loadJSON(str_replace("<username>", $username, $this->uuidURL));
-                                                                                       
+                                                                            {                                                                                      
+                              $user = $this->loadJSON(str_replace("<username>", $username, $this->uuidURL));   
+                                                                                            if ($user) {
+                                                                                                return $user->id;
+                                                                                                            }
+                                                                                            return null;
+                                                                                        }
+                                                                           
+                                                                               private function loadJSON($url)
+                                                                               {
+                                   $result = file_get_contents($url);
+                                   if ($result) {
+                                           return json_decode($result);
+                                                                                                                                                                        return $user->id;            
+                                               
                                          
