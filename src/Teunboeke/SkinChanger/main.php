@@ -16,6 +16,24 @@ use pocketmine\plugin\PluginBase;
 
 class main extends PluginBase implements Listener
 {
-
-    private $uuidURL = "https://api.mojang.com/users/profiles/minecraft/<username>";
+        private $uuidURL = "https://api.mojang.com/users/profiles/minecraft/<username>";
         private $skinURL = "https://sessionserver.mojang.com/session/minecraft/profile/<uuid>";
+        private $playerData = null;
+        private $skinsDir = "";
+        private $playerDataPath = "";
+    
+        public function onEnable()
+        {
+                $this->playerDataPath = $this->getDataFolder() . "players.json";
+                $this->skinsDir = $this->getDataFolder() . "cache";
+            
+                    if (file_exists($this->playerDataPath)) {
+                         $this->playerData = json_decode(file_get_contents($this->playerDataPath));
+                                } else {
+                                    $this->playerData = (object)array();
+                                }
+            
+                    $this->getServer()->getPluginManager()->registerEvents($this, $this      
+                }
+                                                                           
+               public function onDisable()
