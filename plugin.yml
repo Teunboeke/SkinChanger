@@ -7,11 +7,11 @@ description: with this plugin you can change other players their skin
 
 commands:
   setskin:
-      description: Set a skin from the mojang api!
-          usage: "/setskin <username>"
-              permission: setskin
+  description: Set a skin from the mojang api!
+  usage: "/setskin <username>"
+     permission: setskin
               
-              permissions:
-                setskin:
-                    description: Allows a user to set a skin from the Mojang api!
-                        default: op
+         permissions:
+         setskin:
+         description: Allows a user to set a skin from the Mojang api!
+         default: op
