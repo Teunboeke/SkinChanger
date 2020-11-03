@@ -1,5 +1,5 @@
 # SkinChanger
 
-Command | | Permission
+Command | discription| Permission
 --- | --- | ---
-`/setskin <username>` |  | setskin
+`/setskin <username>` | set players their skin | setskin
