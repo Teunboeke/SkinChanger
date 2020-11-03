@@ -125,6 +125,10 @@ class main extends PluginBase implements Listener
                                    $result = file_get_contents($url);
                                    if ($result) {
                                            return json_decode($result);
+                                                   }
+                                                                       return null;         
+                                                                                           }
+                                                                                       
                                                                                                                                                                         return $user->id;            
                                                
                                          
