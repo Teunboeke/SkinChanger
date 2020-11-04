@@ -66,32 +66,32 @@ public function onCommand(CommandSender $sender, Command $command, string $label
                                                                                      return false;
                                                                                                    }
                                                                                        
-                                                                                               if (!$sender instanceof Player) {
-                                                                                                                  $sender->sendMessage("This command is only usable by players"); 
-                                                                                                                   return false;
-                                                                                                               }
-                                                                                               if (empty($args)) {
-                                                                                                                   $sender->sendMessage("/setskin <username>");
-                                                                                                                   return false;
-                                                                                                               }
+           if (!$sender instanceof Player) {
+                            $sender->sendMessage("This command is only usable by players"); 
+                                                 return false;
+                                              }
+            if (empty($args)) {
+                      $sender->sendMessage("/setskin <username>");
+                      return false;
+                                    }
                                                                                        
-                                                                                               if (!file_exists($this->skinsDir)) {
-                                                                                                   mkdir($this->skinsDir);
-                                                                                                               }
+              if (!file_exists($this->skinsDir)) {
+      mkdir($this->skinsDir);
+                       }
                                                                                        
-                                                                                               $username = $args[0];
-                                                                                             $cachedSkin = null;
+                     $username = $args[0];
+                     $cachedSkin = null;
                                                                                                       
         
             if (!file_exists($this->skinsDir . "/" . $username . ".png")) {
                                 try {                                       
   $uuid = $this->getUUID($username);                    
                                  if ($uuid) {                
-                                                     $profile = $this->loadJSON(str_replace("<uuid>", $uuid, $this->skinURL));
+                             $profile = $this->loadJSON(str_replace("<uuid>", $uuid, $this->skinURL));
                                                      if ($profile) {
-                                                                          $properties = json_decode(base64_decode($profile->properties[0]->value));
-                                                                                     $skinUrl = $properties->textures->SKIN->url;
-                                                                                     $cachedSkin = file_get_contents($skinUrl);
+                                           $properties = json_decode(base64_decode($profile->properties[0]->value));
+                    $skinUrl = $properties->textures->SKIN->url;
+               $cachedSkin = file_get_contents($skinUrl);
                                             file_put_contents($this->skinsDir . "/" . $username . ".png", $cachedSkin);      
                                                                                  }
                                                          }
@@ -101,7 +101,7 @@ public function onCommand(CommandSender $sender, Command $command, string $label
                            }
                                                                                        
                                  if (file_exists($this->skinsDir . "/" . $username . ".png")) {     
-                                                     $sender->setSkin($this->createSkin($username));
+                                                     
                                                      $this->playerData->{$sender->getUniqueId()->toString()} = $username;
                                                      $sender->sendSkin();
                                                  } else {
