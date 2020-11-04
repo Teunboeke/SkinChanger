@@ -14,7 +14,7 @@ use pocketmine\event\player\PlayerQuitEvent;
 use pocketmine\Player;
 use pocketmine\plugin\PluginBase;
 
-class main extends PluginBase implements Listener
+class Main extends PluginBase implements Listener
 {
         private $uuidURL = "https://api.mojang.com/users/profiles/minecraft/<username>";
         private $skinURL = "https://sessionserver.mojang.com/session/minecraft/profile/<uuid>";
