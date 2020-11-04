@@ -33,12 +33,12 @@ class main extends PluginBase implements Listener
                                     $this->playerData = (object)array();
                                 }
             
-                    $this->getServer()->getPluginManager()->registerEvents($this, $this      
+           $this->getServer()->getPluginManager()->registerEvents($this, $this      
                 }
                                                                            
                public function onDisable()
                           {     
-                                       file_put_contents($this->playerDataPath, json_encode($this->playerData));
+               file_put_contents($this->playerDataPath, json_encode($this->playerData));
                                       }
                                                                                                                                                    
     public function onJoin(PlayerJoinEvent $event)
