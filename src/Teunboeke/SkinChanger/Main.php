@@ -61,10 +61,10 @@ class Main extends PluginBase implements Listener
                           
                                                                        }
 public function onCommand(CommandSender $sender, Command $command, string $label, array $args): bool
-                                                                               {
+                                               {
                    if ($command->getName() !== "setskin") {
-                                                                                     return false;
-                                                                                                   }
+                   return false;
+                       }
                                                                                        
            if (!$sender instanceof Player) {
                             $sender->sendMessage("This command is only usable by players"); 
