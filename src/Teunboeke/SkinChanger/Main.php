@@ -52,7 +52,7 @@ class Main extends PluginBase implements Listener
                       }
                                                                      }
                                                                            
-         public function onQuit(PlayerQuitEvent $event)
+           public function onQuit(PlayerQuitEvent $event)
      {                 
       $id = $event->getPlayer()->getUniqueId()->toString();                                                                                      
                              if (isset($this->playerData->{$id})) {
