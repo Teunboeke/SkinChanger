@@ -129,7 +129,8 @@ public function onCommand(CommandSender $sender, Command $command, string $label
                                                    }
                                                        return null;         
                                                                                            }
-                                                                                       private function createSkin($username): Skin                                                                                                                                                              return $user->id;                                                  {           
+                                                        private function createSkin($username): Skin       
+                                                                                       {           
                                                         $path = $this->skinsDir . "/" . $username . ".png";
                                                         $img = @imagecreatefrompng($path);
                                                         $bytes = '';
