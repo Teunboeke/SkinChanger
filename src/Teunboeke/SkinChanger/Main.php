@@ -70,10 +70,11 @@ public function onCommand(CommandSender $sender, Command $command, string $label
                             $sender->sendMessage("This command is only usable by players"); 
                                                  return false;
                                               }
-            if (empty($args)) {
+            
+                                                       if (empty($args)) {
                       $sender->sendMessage("/setskin <username>");
                       return false;
-                                    }
+                     }
                                                                                        
               if (!file_exists($this->skinsDir)) {
       mkdir($this->skinsDir);
