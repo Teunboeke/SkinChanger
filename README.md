@@ -1,4 +1,5 @@
-[![](https://poggit.pmmp.io/shield.state/SkinChanger)](https://poggit.pmmp.io/p/SkinChanger)<a href="https://poggit.pmmp.io/p/SkinChanger"><img src="https://poggit.pmmp.io/shield.state/SkinChanger"></a>
+[![](https://poggit.pmmp.io/shield.api/SkinChanger)](https://poggit.pmmp.io/p/SkinChanger)<a href="https://poggit.pmmp.io/p/SkinChanger"><img src="https://poggit.pmmp.io/shield.api/SkinChanger"></a>
+
 
 # SkinChanger
 
