@@ -1,4 +1,4 @@
-# SkinChanger
+ # SkinChanger
 
 this plugin can change other players their skin with (permission)
 
