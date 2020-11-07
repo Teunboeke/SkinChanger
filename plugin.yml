@@ -14,7 +14,7 @@ commands:
   permissions:
      setskin:
      description: Allows a user to set a skin from the Mojang API
-       default: op
+     default: op
   
   
     
