@@ -1,4 +1,6 @@
- # SkinChanger
+[![](https://poggit.pmmp.io/shield.state/SkinChanger)](https://poggit.pmmp.io/p/SkinChanger)<a href="https://poggit.pmmp.io/p/SkinChanger"><img src="https://poggit.pmmp.io/shield.state/SkinChanger"></a>
+
+# SkinChanger
 
 this plugin can change other players their skin with (permission)
 
