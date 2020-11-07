@@ -5,8 +5,16 @@ main: Teunboeke\SkinChanger\Main
 api: 3.15.2
 description: with this plugin you can change other players their skin
 
-
-  
+commands:
+  setskin:
+      description: Sets a skin from the Mojang API
+          usage: "/setskin <username>"
+              permission: setskin
+              
+              permissions:
+                setskin:
+                    description: Allows a user to set a skin from the Mojang API
+                        default: op
   
   
     
